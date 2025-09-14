@@ -1,0 +1,188 @@
+/* Для цвета всей страницы */
+body {
+    background: rgb(181, 181, 181);
+}
+
+/* Отступы для секций */
+section {
+    padding:  30px 0;
+}
+
+
+
+
+
+/* Для шапки страницы */
+header { /* перенос навигации в строку с лого */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+.logo {
+    font-size: 28px;
+}
+.header-menu ul{
+    list-style: none;
+    margin: 0%;
+    padding: 0%;
+}
+
+.header-menu li {
+    display: inline;
+    margin-right: 1em;
+}
+
+/* Для основной иформации на странице */
+.container {
+    max-width: 80%;
+    margin: 0 auto;
+}
+.important { /* отдельно Главная (тк нужно выравнивание по правой стороне) */
+    max-width: 90%;
+    margin: 0 auto;
+    margin-right: 0%;
+}
+
+/* Для блоков информации в Главной */
+.block{
+    width: 49%; /* ширина */
+    height: 900px; /* высота */
+    text-align:left; /* выравнивание текста */
+    float: left; /* местонахождение блоков (изн. один на одном) */
+    margin-left: 1%; /* отступ слева */
+    margin-right: 1%; /* отступ справа */
+    
+}
+.first_block { /* утрать отступ слева для первого блока */
+    margin-left: 0px;
+}
+.last_block { /* утрать отступ справа для последнего блока */
+    margin-right: 0px;
+}
+.resp-image {
+    height: 80%;
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+    object-fit: contain;
+}
+
+/* Название в Главной  */
+.title {
+    width: 40%;
+    font-size: 36px;
+    line-height: 0.4;
+}
+.h_center {
+    text-align: center;
+}
+.h_right {
+    text-align: right;
+}
+.h_left {
+    text-align: left;
+}
+
+/* Список в главной */
+.imp-ul {
+    line-height: 2;
+    list-style: none;
+    list-style-type: '-  ';
+    padding: 3%;
+}
+
+
+/* Для топ-3 (Популярных блюд) */
+.h2pop{
+    text-align: right;
+    font-size: 30px
+}
+.section-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 0;
+    align-items: start;
+}
+.section {
+    width: 32%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background: white;
+    height: auto;
+}
+.section:first-child {
+    margin-right: 0;
+}
+.section:last-child {
+    margin-left: 0;
+}
+.image-container {
+    height: 50%;
+}
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.content {
+    height: 50%;
+    padding: 15px;
+}
+
+/* Меню */
+.h2menu {
+    text-align: right;
+    font-size: 30px
+}
+
+/* Для таблицы */
+.table-style td, .table-style th {
+    border: 0.5px solid rgb(181, 181, 181);
+    padding: 15px;
+}
+
+.table-style {
+    width: 100%;
+    background: white;
+    border-collapse: collapse;
+    border: none;
+    border-radius: 10px;
+}
+
+/* Для раздела "Как сделать заказ?" */
+.h2zak {
+    text-align: center;
+    font-size: 30px
+}
+.container1 {
+    display: flex; align-items: center; gap: 10px;
+    justify-content: space-between;
+}
+.circle {
+    width: 30vh; height: 30vh; border-radius: 50%; 
+    background: white; box-shadow: 3px 3px 5px rgba(0,0,0,0.3); 
+    display: grid; place-items: center; font-weight: bold;
+    min-width: 30vh; min-width: 30vh;
+}
+.arrow {
+    font-size: 24px; color: gray; transform: rotate(30deg);
+}
+.circle p {
+    text-align: center;
+}
+@media (max-width: 769px) {
+    .container1 {
+        flex-direction: column;
+    }
+    .arrow {
+        transform: rotate(90deg);
+        margin: 10px 0;
+    }
+}
