@@ -15,18 +15,18 @@
         <!-- Навигация -->
         <nav class="navigation">
             <ul class="header-menu">
-                <li>Главная</li>
-                <li>Популярные блюда</li>
-                <li>Меню</li>
-                <li>Как сделать заказ</li>
-                <li>Контакты</li>
+                <li><a href="#About">Главная</a></li>
+                <li><a href="#Populardishes">Популярные блюда</a></li>
+                <li><a href="#Menu">Меню</a></li>
+                <li><a href="#Placeanorder">Как сделать заказ</a></li>
+                <li><a href="#Footer">Контакты</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <!-- Главная -->
-        <section>
+        <section id="About">
             <div class="important">
                 <div class="block first_block">
                     <div class="title">
@@ -46,7 +46,7 @@
 
         <div class="container">
             <!-- Популярные блюда -->
-            <section>
+            <section id="Populardishes">
                 <h2 class="h2pop">ПОПУЛЯРНЫЕ БЛЮДА</h2>
                 <div class="section-container">
                     <div class="section">
@@ -73,8 +73,8 @@
             </section>
             
             <!-- Меню -->
-            <section>
-                <h2>МЕНЮ НА СЕГОДНЯ <script>document.write(new Date().toLocaleDateString())</script></h2>
+            <section id="Menu">
+                <h2 class="h2menu">МЕНЮ НА СЕГОДНЯ <script>document.write(new Date().toLocaleDateString())</script></h2>
                 <p>Мы обновляем наше меню ежедневно, чтобы предложить вам только самые свежие и сезонные продукты. Все блюда готовятся в день доставки.</p>
                 
                 <!-- Таблица -->
@@ -87,7 +87,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <tr class="boldtext">
                             <th>Тартар из мраморной говядины</th>
                             <td>С маринованными каперсами, рукколой и хрустящими гренками из бородинского хлеба.</td>
                             <td>490 ₽</td>
@@ -107,7 +107,7 @@
                             <td>С мятой, кинзой и лаймовой заправкой.</td>
                             <td>420 ₽</td>
                         </tr>
-                        <tr>
+                        <tr class="boldtext">
                             <th>Утиная ножка конфи</th>
                             <td>С грушевым пюре и томленой пекинской капустой.</td>
                             <td>580 ₽</td>
@@ -132,12 +132,12 @@
                             <td>С кокосовыми сливками, семенами чиа и хрустящим нутом.</td>
                             <td>350 ₽</td>
                         </tr>
-                        <tr>
+                        <tr class="boldtext">
                             <th>Паста «Неро ди Сепия»</th>
                             <td>С морепродуктами, чернилами каракатицы и щепоткой острого перца.</td>
                             <td>570 ₽</td>
                         </tr>
-                        <tr>
+                        <tr class="boldtext">
                             <th>Говядина по-бургундски</th>
                             <td>Классическое рагу с томлеными овощами и красным вином. Подается с бриошь.</td>
                             <td>590 ₽</td>
@@ -157,7 +157,7 @@
                             <td>Нежный ванильный десерт с ягодным соусом.</td>
                             <td>320 ₽</td>
                         </tr>
-                        <tr>    
+                        <tr class="boldtext">    
                             <th>Шоколадный фондан</th>
                             <td>С тающей сердцевиной и шариком ванильного мороженого.</td>
                             <td>370 ₽</td>
@@ -168,7 +168,7 @@
                 <button onclick="">Перейти к заказу</button>
             </section>
             <!-- Как сделать заказ -->
-            <section>
+            <section id="Placeanorder">
                 <h2 class="h2zak">ТРИ ШАГА К ИДЕАЛЬНОМУ ОБЕДУ</h2>
                 <div class="container1">
                     <div class="circle"><p>Выберите. Изучите наше ежедневное меню. Каждое блюдо — это свежие продукты и идеальный баланс вкуса.</p></div>
@@ -183,20 +183,35 @@
     </main>
     
         
-    <footer>
-        <!-- Контакты -->
-        <h2>Contact Us</h2>
-        <!-- Добавить значки (звонок, письмо(почта)) -->
-        <p>+7(950)000-00-00</p>
-        <p>chefslunch@gmail.com</p>
-        <!-- Добавить иконки приложений (вк, тг, f, inst, g+) -->
+    <footer id="Footer">
         <hr>
-        <p>© Chef’s Lunch, 2024</p>
-        <ul>
-            <li>FAQ</li>
-            <li>Privacy</li>
-            <li>Terms&Conditions</li>
-        </ul>
+        <!-- Контакты -->
+        <div class="footer">
+            <div class="footer-column">
+                <h2 class="logo">Contact</h2>
+                <h2 class="logo">Us</h2>
+            </div>
+            <!-- Добавить значки (звонок, письмо(почта)) -->
+            <div class="footer-column">
+                <p>+7(950)000-00-00</p>
+                <p>chefslunch@gmail.com</p>
+            </div>
+            <div class="footer-column">
+                <p>Наши социальные сети:</p>
+                <!-- Добавить иконки приложений (вк, тг, f, inst, g+) -->
+            </div>
+        </div>
+        
+        <hr>
+        <div class="footer2">
+            <p>© Chef’s Lunch, 2024</p>
+            <ul >
+                <li>FAQ</li>
+                <li>Privacy</li>
+                <li>Terms&Conditions</li>
+            </ul>
+        </div>
+        
     </footer>
 </body>
 </html>

@@ -1,6 +1,8 @@
 /* Для цвета всей страницы */
 body {
     background: rgb(181, 181, 181);
+    padding-top: 20px;
+    /* отступ для header */
 }
 
 /* Отступы для секций */
@@ -8,6 +10,10 @@ section {
     padding:  30px 0;
 }
 
+/* прокрутка */
+html {
+    scroll-behavior: smooth; 
+}
 
 
 
@@ -18,6 +24,11 @@ header { /* перенос навигации в строку с лого */
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+    position: sticky; /* Закрепение шапки страницы */
+    top: 0;
+    z-index: 1000;
+    background-color: rgb(181, 181, 181);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Тень для визуального разделения */
 }
 .logo {
     font-size: 28px;
@@ -31,6 +42,10 @@ header { /* перенос навигации в строку с лого */
 .header-menu li {
     display: inline;
     margin-right: 1em;
+}
+a { /* Удаление стиля гиперссылок */
+    color: black;
+    text-decoration: none;
 }
 
 /* Для основной иформации на странице */
@@ -144,16 +159,20 @@ header { /* перенос навигации в строку с лого */
 
 /* Для таблицы */
 .table-style td, .table-style th {
-    border: 0.5px solid rgb(181, 181, 181);
+    border: 3px solid rgb(181, 181, 181);
     padding: 15px;
 }
-
 .table-style {
     width: 100%;
-    background: white;
+    background: rgb(255, 255, 255);
     border-collapse: collapse;
     border: none;
-    border-radius: 10px;
+    border-radius: 20px;
+    color:rgb(0, 50, 4);
+}
+
+.boldtext {/* Выделение более дорогих позиций */
+    color: black;
 }
 
 /* Для раздела "Как сделать заказ?" */
@@ -167,12 +186,12 @@ header { /* перенос навигации в строку с лого */
 }
 .circle {
     width: 30vh; height: 30vh; border-radius: 50%; 
-    background: white; box-shadow: 3px 3px 5px rgba(0,0,0,0.3); 
+    background: rgb(255, 255, 255); box-shadow: 3px 3px 5px rgba(0,0,0,0.3); 
     display: grid; place-items: center; font-weight: bold;
     min-width: 30vh; min-width: 30vh;
 }
 .arrow {
-    font-size: 24px; color: gray; transform: rotate(30deg);
+    font-size: 24px; color: rgb(7, 38, 9); transform: rotate(30deg);
 }
 .circle p {
     text-align: center;
@@ -185,4 +204,32 @@ header { /* перенос навигации в строку с лого */
         transform: rotate(90deg);
         margin: 10px 0;
     }
+}
+
+/* footer */
+.footer {
+    display: flex;
+    gap: 27%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.footer-column {
+    flex: 1;
+    min-width: 15%;
+}
+.footer2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    height: 5px;
+}
+footer ul {
+    list-style: none;
+    margin: 0%;
+    padding: 0%;
+}
+footer li {
+    display: inline;
+    margin-right: 1em;
 }
