@@ -38,6 +38,10 @@ header { /* перенос навигации в строку с лого */
     margin: 0%;
     padding: 0%;
 }
+nav a#active {
+    color: tomato;
+    position: relative;
+}
 
 .header-menu li {
     display: inline;
