@@ -411,3 +411,33 @@ textarea {
 .order-price {
   white-space: nowrap;
 }
+
+.dish-card .dish-image {
+  width: 100%;
+  aspect-ratio: 4 / 3; 
+  height: auto;        
+  object-fit: cover;   
+  display: block;
+  border-radius: inherit; 
+}
+
+.filter-btn {
+  background: transparent;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 12px;
+  font: inherit;
+  color: #00461e;
+  cursor: pointer;
+  transition: 0.15s ease;
+}
+
+.filter-btn:hover {
+  background: rgba(27, 133, 31, 0.092);
+}
+
+.filter-btn.active {
+  background: rgba(1, 85, 29, 0.298); /* мягкая зелёная плашка */
+  color: #00461e;
+  font-weight: 600;
+}
