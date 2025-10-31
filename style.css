@@ -210,8 +210,9 @@ a { /* Удаление стиля гиперссылок */
     }
 }
 
-/* footer */
-.footer {
+
+
+.footer { 
     display: flex;
     gap: 27%;
     justify-content: space-between;
@@ -236,4 +237,177 @@ footer ul {
 footer li {
     display: inline;
     margin-right: 1em;
+}
+
+/* Медиа-запросы для мобильных устройств */
+@media (max-width: 768px) {
+header {
+        padding: 15px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .logo {
+        font-size: 1.5em;
+        margin-bottom: 15px;
+    }
+    
+    .navigation {
+        width: 100%;
+    }
+    
+    .header-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        width: 100%;
+    }
+    
+    .header-menu li {
+        display: block;
+        margin: 0;
+        text-align: center;
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    .header-menu li:first-child {
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    .header-menu li:last-child {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    .header-menu a {
+        display: block;
+        width: 100%;
+        padding: 8px 0;
+        font-size: 1.1em;
+    }
+    
+    .logo {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+    
+    .navigation {
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 5px;
+    }
+    
+    .header-menu {
+        display: flex;
+        justify-content: flex-start;
+    }
+    
+    .header-menu li {
+        margin-right: 15px;
+        font-size: 0.9em;
+    }
+    
+    /* Адаптация главной секции */
+    .important {
+        flex-direction: column;
+    }
+    
+    .block {
+        width: 100%;
+        padding: 10px 0;
+    }
+    
+    .title h2 {
+        font-size: 1.5em;
+        margin: 5px 0;
+    }
+    
+    /* Адаптация популярных блюд */
+    .h2pop, .h2menu, .h2zak {
+        text-align: center;
+        font-size: 1.5em;
+    }
+    
+    .section-container {
+        flex-direction: column;
+    }
+    
+    .section {
+        width: 100%;
+    }
+    
+    /* Адаптация таблицы */
+    .table-style {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    .table-style th, .table-style td {
+        padding: 8px 5px;
+        font-size: 0.9em;
+    }
+    
+    /* Адаптация секции заказа */
+    .container1 {
+        flex-direction: column;
+    }
+    
+    .circle {
+        width: 200px;
+        height: 200px;
+        margin: 10px 0;
+    }
+    
+    .arrow {
+        transform: rotate(90deg);
+    }
+    
+    /* Адаптация футера */
+    .footer, .footer2 {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-column {
+        margin-bottom: 15px;
+    }
+    
+    .footer2 ul {
+        justify-content: center;
+        margin-top: 10px;
+    }
+    
+    /* Общие адаптации */
+    .container {
+        max-width: 95%;
+    }
+    
+    p {
+        font-size: 0.95em;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Дополнительные адаптации для очень маленьких экранов */
+    .header-menu li {
+        margin-right: 10px;
+        font-size: 0.85em;
+    }
+    
+    .title h2 {
+        font-size: 1.3em;
+    }
+    
+    .circle {
+        width: 180px;
+        height: 180px;
+        font-size: 0.9em;
+    }
+    
+    .table-style th, .table-style td {
+        padding: 6px 3px;
+        font-size: 0.85em;
+    }
 }

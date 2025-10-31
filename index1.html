@@ -1,29 +1,26 @@
-<!-- Страница "Собрать ланч" -->
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chef's Lunch - Собрать ланч</title>
-    <link rel="stylesheet" href="style1.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
+    <link rel="stylesheet" href="style1.css">
 
-    </style>
 </head>
 <body>
     <header>
         <!-- Название компании -->
-        <h1 class="logo">CHEF’S LUNCH</h1>
+        <h1 class="logo">CHEF'S LUNCH</h1>
         <!-- Навигация -->
         <nav class="navigation">
             <ul class="header-menu">
                 <li><a href="index.html">Главная</a></li>
-                <li><a href="#Populardishes" id="active">Популярные блюда</a></li>
+                <li><a href="#Populardishes">Популярные блюда</a></li>
                 <li><a href="#Menu">Меню</a></li>
-                <li><a href="#Placeanorder">Как сделать заказ</a></li>
+                <li><a href="#Placeanorder" id="active">Сделать заказ</a></li>
                 <li><a href="#Footer">Контакты</a></li>
             </ul>
         </nav>
@@ -41,21 +38,21 @@
             <div class="container">
                 <h2>Супы</h2>
                 <div class="dishes-grid">
-                    <div class="dish-card">
+                    <div class="dish-card" data-category="soup" data-name="Крем-суп из белых грибов" data-price="380" data-value="cream-mushroom">
                         <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Крем-суп из белых грибов" class="dish-image">
                         <p class="dish-price">380 ₽</p>
                         <p class="dish-name">Крем-суп из белых грибов</p>
                         <p class="dish-weight">350 мл</p>
                         <button class="add-btn">Добавить</button>
                     </div>
-                    <div class="dish-card">
+                    <div class="dish-card" data-category="soup" data-name="Томатный суп с базиликом" data-price="350" data-value="tomato-basil">
                         <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Томатный суп с базиликом" class="dish-image">
                         <p class="dish-price">350 ₽</p>
                         <p class="dish-name">Томатный суп с базиликом</p>
                         <p class="dish-weight">350 мл</p>
                         <button class="add-btn">Добавить</button>
                     </div>
-                    <div class="dish-card">
+                    <div class="dish-card" data-category="soup" data-name="Тыквенный крем-суп" data-price="320" data-value="pumpkin-cream">
                         <img src="https://avatars.mds.yandex.net/i?id=b0be51786e159695d8f1f8444bd9ec8c_l-4882666-images-thumbs&n=13" alt="Тыквенный крем-суп" class="dish-image">
                         <p class="dish-price">320 ₽</p>
                         <p class="dish-name">Тыквенный крем-суп</p>
@@ -70,21 +67,21 @@
             <div class="container">
                 <h2>Главные блюда</h2>
                 <div class="dishes-grid">
-                    <div class="dish-card">
-                        <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Тартар из мраморной говядины" class="dish-image">
+                    <div class="dish-card" data-category="main-course" data-name="Тартар из мраморной говядины" data-price="490" data-value="beef-tartare">
+                        <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Тартар из мраворной говядины" class="dish-image">
                         <p class="dish-price">490 ₽</p>
                         <p class="dish-name">Тартар из мраморной говядины</p>
                         <p class="dish-weight">180 г</p>
                         <button class="add-btn">Добавить</button>
                     </div>
-                    <div class="dish-card">
+                    <div class="dish-card" data-category="main-course" data-name="Равиоли с рикоттой и шпинатом" data-price="450" data-value="ravioli-ricotta">
                         <img src="https://avatars.mds.yandex.net/i?id=910ed199c794b5b402ba3936a5f18b5d_l-5433932-images-thumbs&n=13" alt="Равиоли с рикоттой и шпинатом" class="dish-image">
                         <p class="dish-price">450 ₽</p>
                         <p class="dish-name">Равиоли с рикоттой и шпинатом</p>
                         <p class="dish-weight">250 г</p>
                         <button class="add-btn">Добавить</button>
                     </div>
-                    <div class="dish-card">
+                    <div class="dish-card" data-category="main-course" data-name="Табуле с киноа и креветками" data-price="420" data-value="quinoa-shrimp">
                         <img src="https://aif-s3.aif.ru/images/010/276/a59e6711e96317fddf7a5ce3386760f6.jpg" alt="Табуле с киноа и креветками" class="dish-image">
                         <p class="dish-price">420 ₽</p>
                         <p class="dish-name">Табуле с киноа и креветками</p>
@@ -99,27 +96,136 @@
             <div class="container">
                 <h2>Напитки</h2>
                 <div class="dishes-grid">
-                    <div class="dish-card">
+                    <div class="dish-card" data-category="drink" data-name="Свежевыжатый апельсиновый сок" data-price="180" data-value="orange-juice">
                         <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Свежевыжатый апельсиновый сок" class="dish-image">
                         <p class="dish-price">180 ₽</p>
                         <p class="dish-name">Свежевыжатый апельсиновый сок</p>
                         <p class="dish-weight">250 мл</p>
                         <button class="add-btn">Добавить</button>
                     </div>
-                    <div class="dish-card">
+                    <div class="dish-card" data-category="drink" data-name="Матча латте" data-price="220" data-value="matcha-latte">
                         <img src="https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA1y4RF0.img?w=630&h=630&m=6" alt="Матча латте" class="dish-image">
                         <p class="dish-price">220 ₽</p>
                         <p class="dish-name">Матча латте</p>
                         <p class="dish-weight">300 мл</p>
                         <button class="add-btn">Добавить</button>
                     </div>
-                    <div class="dish-card">
+                    <div class="dish-card" data-category="drink" data-name="Минеральная вода" data-price="120" data-value="mineral-water">
                         <img src="https://avatars.mds.yandex.net/i?id=ba4499164cb7781ef97890137f76cad26536dc11-10877393-images-thumbs&n=13" alt="Минеральная вода" class="dish-image">
                         <p class="dish-price">120 ₽</p>
                         <p class="dish-name">Минеральная вода</p>
                         <p class="dish-weight">500 мл</p>
                         <button class="add-btn">Добавить</button>
                     </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Форма заказа -->
+        <section class="order-form-section">
+            <div class="container">
+                <div class="order-form-container">
+                    <h2>Оформление заказа</h2>
+                    <form id="lunch-order-form" action="https://httpbin.org/post" method="POST">
+                        <div class="form-columns">
+                            <div class="form-column">
+                                <div class="form-section">
+                                    <h3>Ваш заказ</h3>
+                                    
+                                    
+                                    <div class="form-group">
+                                        <label for="soup" class="required">Суп</label>
+                                        <select id="soup" name="soup" required>
+                                            <option value="" selected disabled>Выберите суп</option>
+                                            <option value="cream-mushroom">Крем-суп из белых грибов</option>
+                                            <option value="tomato-basil">Томатный суп с базиликом</option>
+                                            <option value="pumpkin-cream">Тыквенный крем-суп</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="main-course" class="required">Главное блюдо</label>
+                                        <select id="main-course" name="main-course" required>
+                                            <option value="" selected disabled>Выберите главное блюдо</option>
+                                            <option value="beef-tartare">Тартар из мраморной говядины</option>
+                                            <option value="ravioli-ricotta">Равиоли с рикоттой и шпинатом</option>
+                                            <option value="quinoa-shrimp">Табуле с киноа и креветками</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="drink" class="required">Напиток</label>
+                                        <select id="drink" name="drink" required>
+                                            <option value="" selected disabled>Выберите напиток</option>
+                                            <option value="orange-juice">Свежевыжатый апельсиновый сок</option>
+                                            <option value="matcha-latte">Матча латте</option>
+                                            <option value="mineral-water">Минеральная вода</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="comment">Комментарий к заказу</label>
+                                        <textarea id="comment" name="comment" placeholder="Ваши пожелания к заказу..."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-column">
+                                <div class="form-section">
+                                    <h3>Ваши данные</h3>
+                                    
+                                    <div class="form-group">
+                                        <label for="name" class="required">Имя</label>
+                                        <input type="text" id="name" name="name" required>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="email" class="required">Email</label>
+                                        <input type="email" id="email" name="email" required>
+                                    </div>
+                                    
+                                    <div class="checkbox-group">
+                                        <input type="checkbox" id="newsletter" name="newsletter" checked>
+                                        <label for="newsletter">Подписаться на рассылку</label>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="phone" class="required">Телефон</label>
+                                        <input type="tel" id="phone" name="phone" required>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="address" class="required">Адрес доставки</label>
+                                        <input type="text" id="address" name="address" required>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="required">Время доставки</label>
+                                        <div class="radio-options">
+                                            <div class="radio-group">
+                                                <input type="radio" id="delivery-time-1" name="delivery-time" value="asap" required>
+                                                <label for="delivery-time-1">Как можно скорее</label>
+                                            </div>
+                                            <div class="radio-group">
+                                                <input type="radio" id="delivery-time-2" name="delivery-time" value="specific">
+                                                <label for="delivery-time-2">Указать время</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="specific-time">Указать время доставки</label>
+                                        <input type="time" id="specific-time" name="specific-time" min="07:00" max="23:00" step="300">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-buttons">
+                            <button type="reset" class="reset-btn" id="reset-order">Сбросить</button>
+                            <button type="submit" class="submit-btn">Отправить заказ</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </section>
@@ -146,13 +252,13 @@
         
         <hr>
         <div class="footer2">
-            <p>© Chef’s Lunch, 2024</p>
-            <ul >
+            <p>© Chef's Lunch, 2024</p>
+            <ul>
                 <li>FAQ</li>
                 <li>Privacy</li>
                 <li>Terms&Conditions</li>
             </ul>
         </div>
     </footer>
-</body>
-</html>
+    
+    
