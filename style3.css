@@ -539,3 +539,33 @@ textarea {
   background: tomato;
   color:#fff;
 }
+
+
+/* Серый «некликабельный» вариант */
+.variant-card--info {
+  background: #e9e9e91b;          /* серый фон */
+  border: 1px solid #d2d2d2;
+  box-shadow: none;
+}
+
+.variant-card--info:hover {
+  background: #e9e9e9;          /* без эффекта наведения */
+}
+
+.variant-card--info .variant-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 96px;              /* чтобы выглядело как обычная карточка по высоте */
+  padding: 16px;
+}
+
+.variant-card--info .variant-title {
+  display: none;                 /* заголовок не нужен */
+}
+
+.variant-info-text {
+  margin: 0;
+  text-align: center;
+  font-weight: 500;
+}

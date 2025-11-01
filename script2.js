@@ -224,11 +224,13 @@ document.addEventListener('DOMContentLoaded', () => {
   wireFormValidation();
 });
 
-function renderComboVariants(){
+function renderComboVariants() {
   const wrap = document.getElementById('variants-grid');
-  if(!wrap) return;
+  if (!wrap) return;
 
   wrap.innerHTML = '';
+
+  // Рендер обычных вариантов
   COMBOS.forEach(combo => {
     const card = document.createElement('div');
     card.className = 'variant-card';
@@ -237,7 +239,7 @@ function renderComboVariants(){
     const itemsHtml = Array.from(combo.req).map(cat => `
       <div class="variant-item" data-cat="${cat}">
         <img src="${PREVIEWS[cat] || ''}" alt="${cat}">
-        <div class="variant-caption">${CATEGORIES.find(c=>c.key===cat)?.title || cat}</div>
+        <div class="variant-caption">${CATEGORIES.find(c => c.key === cat)?.title || cat}</div>
       </div>
     `).join('');
 
@@ -246,11 +248,26 @@ function renderComboVariants(){
       <div class="variant-content">${itemsHtml}</div>
     `;
 
-    // Клик по карточке или по её "строкам" выбирает вариант
+    // клик по карточке выбирает вариант
     card.addEventListener('click', () => setActiveCombo(combo.id));
 
     wrap.appendChild(card);
   });
+
+  // ➜ Плашка «Добавить десерт...», как ещё одна карточка, но не кликабельная
+  const infoCard = document.createElement('div');
+  infoCard.className = 'variant-card variant-card--info';
+  infoCard.setAttribute('aria-disabled', 'true');     // для доступности
+  infoCard.style.pointerEvents = 'none';              // не кликабельна
+  infoCard.style.cursor = 'default';
+
+  infoCard.innerHTML = `
+    <div class="variant-content">
+      <p class="variant-info-text">Добавить десерт можно к каждому комбо</p>
+    </div>
+  `;
+
+  wrap.appendChild(infoCard); // добавляем ПОСЛЕ всех вариантов
 }
 
 function setActiveCombo(id){
