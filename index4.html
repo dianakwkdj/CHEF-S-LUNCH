@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Chef's Lunch — Сделать заказ</title>
+
+        <!-- Базовые стили проекта -->
+        <link rel="stylesheet" href="style.css"/>
+        <link rel="stylesheet" href="style1.css"/>
+        <link rel="stylesheet" href="style2.css"/>
+
+        <!-- Мягкие точечные стили под фильтры и строку заказа (не меняют общий вид) -->
+        <style>
+            .filters {
+            display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 18px;
+            }
+            
+            
+            .order-item {
+            display:flex; justify-content:space-between; align-items:center; gap:14px;
+            padding: 6px 0; border-bottom: 1px dashed #eee;
+            }
+            .order-item-right { display:flex; align-items:center; gap:10px; }
+            .order-price { white-space: nowrap; }
+            .dishes-grid .dish-card { transition: .15s ease; }
+            .dishes-grid .dish-card[hidden] { display:none !important; }
+        </style>
+    </head>
+    <body>
+        <header>
+            <!-- Название компании -->
+            <h1 class="logo">CHEF'S LUNCH</h1>
+            <!-- Навигация -->
+            <nav class="navigation">
+                <ul class="header-menu">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="#Populardishes">Популярные блюда</a></li>
+                    <li><a href="#Menu">Меню</a></li>
+                    <li><a href="#Placeanorder" id="active">Сделать заказ</a></li>
+                    <li><a href="#Footer">Контакты</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main id="build">
+        <section class="page-title">
+            <div class="container">
+            <h1>Сделать заказ</h1>
+            <p>Выберите блюда по разделам и оформите заказ — быстро и вкусно.</p>
+            </div>
+        </section>
+
+        <!-- Раздел: Доступные варианты ланча -->
+        <section id="lunch-variants">
+            <div class="container">
+                <h2>Варианты ланча</h2>
+                <div class="variants-grid" id="variants-grid">
+                    <!-- Карточки вариантов будут сгенерированы скриптом -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Раздел: Выберите суп -->
+        <section>
+            <div class="container">
+            <h2>Выберите суп</h2>
+
+            <!-- Фильтры супов -->
+            <div class="filters" data-category="soup">
+                <button type="button" class="filter-btn active" data-kind="all">Все</button>
+                <button type="button" class="filter-btn" data-kind="fish">рыбный</button>
+                <button type="button" class="filter-btn" data-kind="meat">мясной</button>
+                <button type="button" class="filter-btn" data-kind="veg">вегетарианский</button>
+            </div>
+
+            <div class="dishes-grid" data-category="soup"></div>
+            </div>
+        </section>
+
+        <!-- Раздел: Выберите главное блюдо -->
+        <section>
+            <div class="container">
+            <h2>Выберите главное блюдо</h2>
+
+            <!-- Фильтры главного -->
+            <div class="filters" data-category="main-course">
+                <button type="button" class="filter-btn active" data-kind="all">Все</button>
+                <button type="button" class="filter-btn" data-kind="fish">рыбное</button>
+                <button type="button" class="filter-btn" data-kind="meat">мясное</button>
+                <button type="button" class="filter-btn" data-kind="veg">вегетарианское</button>
+            </div>
+
+            <div class="dishes-grid" data-category="main-course"></div>
+            </div>
+        </section>
+
+        <!-- Раздел: Выберите салат или стартер -->
+        <section>
+            <div class="container">
+            <h2>Выберите салат или стартер</h2>
+
+            <!-- Фильтры салатов/стартеров -->
+            <div class="filters" data-category="salad">
+                <button type="button" class="filter-btn active" data-kind="all">Все</button>
+                <button type="button" class="filter-btn" data-kind="fish">рыбный</button>
+                <button type="button" class="filter-btn" data-kind="meat">мясной</button>
+                <button type="button" class="filter-btn" data-kind="veg">вегетарианский</button>
+            </div>
+
+            <div class="dishes-grid" data-category="salad"></div>
+            </div>
+        </section>
+
+        <!-- Раздел: Выберите напиток -->
+        <section>
+            <div class="container">
+            <h2>Выберите напиток</h2>
+
+            <!-- Фильтры напитков -->
+            <div class="filters" data-category="drink">
+                <button type="button" class="filter-btn active" data-kind="all">Все</button>
+                <button type="button" class="filter-btn" data-kind="cold">холодный</button>
+                <button type="button" class="filter-btn" data-kind="hot">горячий</button>
+            </div>
+
+            <div class="dishes-grid" data-category="drink"></div>
+            </div>
+        </section>
+
+        <!-- Раздел: Выберите десерт -->
+        <section>
+            <div class="container">
+            <h2>Выберите десерт</h2>
+
+            <!-- Фильтры десертов -->
+            <div class="filters" data-category="dessert">
+                <button type="button" class="filter-btn active" data-kind="all">Все</button>
+                <button type="button" class="filter-btn" data-kind="small">маленькая порция</button>
+                <button type="button" class="filter-btn" data-kind="medium">средняя порция</button>
+                <button type="button" class="filter-btn" data-kind="large">большая порция</button>
+            </div>
+
+            <div class="dishes-grid" data-category="dessert"></div>
+            </div>
+        </section>
+
+        <!-- Оформление заказа -->
+        <section>
+            <div class="container">
+            <h2>Сделать заказ</h2>
+
+            <div class="order-form-container">
+                <form id="lunch-order-form" action="https://httpbin.org/post" method="POST">
+                <div class="form-columns">
+                    <div class="form-column">
+                    <div class="form-section">
+                        <h3>Ваш заказ</h3>
+
+                        <div class="order-summary">
+                        <div id="order-items"></div>
+                        <div class="order-total">
+                            <span>Итого:</span> <strong id="order-total">0 ₽</strong>
+                        </div>
+                        </div>
+
+                        <div class="form-group">
+                        <label for="comment">Комментарий к заказу</label>
+                        <textarea id="comment" name="comment" placeholder="Ваши пожелания..."></textarea>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="form-column">
+                    <div class="form-section">
+                        <h3>Ваши данные</h3>
+
+                        <div class="form-group">
+                        <label for="name" class="required">Имя</label>
+                        <input type="text" id="name" name="name" required/>
+                        </div>
+
+                        <div class="form-group">
+                        <label for="email" class="required">Email</label>
+                        <input type="email" id="email" name="email" required/>
+                        </div>
+
+                        <div class="checkbox-group">
+                        <input type="checkbox" id="newsletter" name="newsletter" checked/>
+                        <label for="newsletter">Подписаться на рассылку</label>
+                        </div>
+
+                        <div class="form-group">
+                        <label for="phone" class="required">Телефон</label>
+                        <input type="tel" id="phone" name="phone" required/>
+                        </div>
+
+                        <div class="form-group">
+                        <label for="address" class="required">Адрес доставки</label>
+                        <input type="text" id="address" name="address" required/>
+                        </div>
+
+                        <div class="form-group">
+                        <label class="required">Время доставки</label>
+                        <div class="radio-row">
+                            <div class="radio-group">
+                            <input type="radio" id="delivery-time-1" name="delivery-time" value="asap" required/>
+                            <label for="delivery-time-1">Как можно скорее</label>
+                            </div>
+                            <div class="radio-group">
+                            <input type="radio" id="delivery-time-2" name="delivery-time" value="specific"/>
+                            <label for="delivery-time-2">Указать время</label>
+                            </div>
+                        </div>
+                        </div>
+
+                        <div class="form-group">
+                        <label for="specific-time">Указать время доставки</label>
+                        <input type="time" id="specific-time" name="specific-time" min="07:00" max="23:00" step="300"/>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="form-buttons">
+                    <button type="reset" class="reset-btn" id="reset-order">Сбросить</button>
+                    <button type="submit" class="submit-btn">Отправить заказ</button>
+                </div>
+                </form>
+            </div>
+            </div>
+        </section>
+        </main>
+
+        <footer id="Footer">
+      <hr>
+      
+      <div class="footer">
+        <div class="footer-column">
+          <h2 class="logo">Contact</h2>
+          <h2 class="logo">Us</h2>
+        </div>
+        
+        <div class="footer-column">
+          <p>+7(950)000-00-00</p>
+          <p>chefslunch@gmail.com</p>
+        </div>
+        <div class="footer-column">
+          <p>Наши социальные сети:</p>
+          
+        </div>
+      </div>
+      
+      <hr>
+      <div class="footer2">
+        <p>© Chef's Lunch, 2024</p>
+        <ul>
+          <li>FAQ</li>
+          <li>Privacy</li>
+          <li>Terms&Conditions</li>
+        </ul>
+      </div>
+    </footer>
+
+        <script src="script2.js" defer></script>
+    </body>
+</html>
